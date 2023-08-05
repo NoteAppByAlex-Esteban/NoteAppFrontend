@@ -1,0 +1,43 @@
+﻿@page "/login"
+@inject NavigationManager Nav
+
+@code {
+
+}
+
+<div class="bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-4xl font-bold text-white">
+            <img src="./img/Note.png" class="w-12 mr-4" />
+            Note App
+        </a>
+        <div class="w-full bg-gray-800 border border-gray-700 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
+                    Log In
+                </h1>
+                <div class="space-y-4 md:space-y-6">
+                    <div>
+                        <label for="user" class="block mb-2 text-sm font-medium text-white">Your User</label>
+                        <input type="text" id="user" class="bg-gray-700 border border-gray-600 text-white sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400" placeholder="PPascal" required="">
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-white">Your Password</label>
+                        <input type="password" id="password" placeholder="••••••••" class="bg-gray-700 border border-gray-600 text-white sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 placeholder-gray-400" required="">
+                    </div>
+                    <button class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Log In</button>
+                    <p class="text-sm font-light text-gray-400 dark:text-gray-400">
+                        Don’t have an account yet? <a @onclick="registerView" class="font-medium text-blue-500 hover:underline cursor-pointer">Register</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    private void registerView()
+    {
+        Nav.NavigateTo("/register");
+    }
+}
